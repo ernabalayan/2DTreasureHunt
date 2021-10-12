@@ -15,6 +15,8 @@ public class playerscript : MonoBehaviour
     public GameObject redKnob;
     public GameObject blueKnob;
     public GameObject greenKnob;
+    bool moveLeft = false;
+    public Rigidbody2D rb;
    
   
     
@@ -71,10 +73,11 @@ public class playerscript : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.A))
         {
+            moveLeft = true;
             GetComponent<Animator>().enabled = true;
             GetComponent<Animator>().Play("moveLeftAnim");
    
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            
 
         }
         if (Input.GetKey(KeyCode.W))
@@ -98,8 +101,16 @@ public class playerscript : MonoBehaviour
             GetComponent<Animator>().enabled = false;
        }
     }
-  
+
     // Update is called once per frame
+
+    private void FixedUpdate()
+    {
+        if (moveLeft)
+        {
+            rb.AddForce(Vector2.left * moveSpeed);
+        }
+    }
     void Update()
     {
         
