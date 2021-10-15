@@ -9,6 +9,9 @@ TagManager:
   - GreenKnob
   - building
   - collider
+  - NPC1
+  - door
+  - redDoor
   layers:
   - Default
   - TransparentFX
