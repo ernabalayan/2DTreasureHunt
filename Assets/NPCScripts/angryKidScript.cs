@@ -7,6 +7,7 @@ public class angryKidScript : MonoBehaviour
 {
 
     public Text _text;
+    public Image textbox;
     public SpriteRenderer spriteRenderer;
     public bool gotBurger = false;
     public bool gotApple = false;
@@ -17,6 +18,7 @@ public class angryKidScript : MonoBehaviour
     void Start()
     {
         _text.GetComponent<Text>().enabled = false;
+        textbox.GetComponent<Image>().enabled = false;
 
     }
 
@@ -26,11 +28,13 @@ public class angryKidScript : MonoBehaviour
     {
         if(!gotApple && !gotBurger)
         {
+            textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "I'm so fucking hungry, find me some food and I will give you the key";
         }
         if (gotApple)
         {
+            textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "ew I fucking hate fruit, get me something else or no key for you";
         }
@@ -41,7 +45,7 @@ public class angryKidScript : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-
+        textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         Debug.Log("not colliding with NPC");
     }
@@ -51,6 +55,7 @@ public class angryKidScript : MonoBehaviour
         {
             if (gotBurger)
             {
+                textbox.GetComponent<Image>().enabled = true;
                 _text.GetComponent<Text>().enabled = true;
                 _text.text = "I hate tomatoes but I guess this will do, here's the key";
                 spriteRenderer.sprite = happyKid;
