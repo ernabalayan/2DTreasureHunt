@@ -26,18 +26,23 @@ public class boxScript : MonoBehaviour
                 this.transform.localPosition = new Vector2(0, -3);
             }
         }
-        if(collision.gameObject.tag == "Player" && gameObject.tag == "wrongBox")
+       
+        if(pressingE == true && collision.gameObject.tag == "Player" && gameObject.tag == "wrongBox")
         {
             GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().wrongPackage = true;
             Debug.Log("holding wrong box");
             wrongBox = true;
         }
-        if (collision.gameObject.tag == "Player" && gameObject.tag == "theBox")
-        {
-            GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage = true;
-            Debug.Log("holding right box");
-            rightBox = true;
-        }
+
+            if (pressingE == true && collision.gameObject.tag == "Player" && gameObject.tag == "theBox")
+            {
+                GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage = true;
+                Debug.Log("holding right box");
+                rightBox = true;
+            }
+        
+        
+
     }
     // Update is called once per frame
     void Update()
@@ -48,9 +53,15 @@ public class boxScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.R))
         {
+            GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage = false;
+            GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().wrongPackage = false;
+            wrongBox = false;
+            rightBox = false;
             this.transform.parent = null;
             pressingE = false;
             pickedUpBox = false;
         }
+
+        }
     }
-}
+
