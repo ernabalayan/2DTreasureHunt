@@ -27,20 +27,20 @@ public class sadNPC4Script : MonoBehaviour
         
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
-            _text.text = "I bough my wife a gift for our anniversary but I can't find it, if you find it for me I'll give you the door knob";
+            _text.text = "I bought my wife a gift for our anniversary but I can't find it, if you can find it for me I'll give you the door knob";
         
         if (wrongPackage)
         {
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
-            _text.text = "This isn't the right box, find my package please";
+            _text.text = "This isn't the right box, mine is in a red package, find my package please";
         }
         if (rightPackage)
         {
             knobCollider.enabled = true;
             knobRenderer.enabled = true;
             box.transform.parent = this.transform;
-            box.transform.localPosition = new Vector2(0, 0);
+            box.transform.localPosition = new Vector2(-1, -2);
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "This is the one, thank you!";

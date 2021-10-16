@@ -30,13 +30,13 @@ public class angryKidScript : MonoBehaviour
         {
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
-            _text.text = "I'm so fucking hungry, find me some food and I will give you the key";
+            _text.text = "I'm so hungry, find me some food and I will give you the key";
         }
         if (gotApple)
         {
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
-            _text.text = "ew I fucking hate fruit, get me something else or no key for you";
+            _text.text = "ew I hate fruit, get me something else or no key for you";
         }
       
         
