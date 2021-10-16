@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boxScript : MonoBehaviour
+public class catScript : MonoBehaviour
 {
     public bool pressingE;
     public GameObject player;
-    static bool pickedUpBox;
-
+    public bool pickedUpCat;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +16,11 @@ public class boxScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (pressingE && pickedUpBox == false && GameObject.Find("cat").GetComponent<catScript>().pickedUpCat == false && GameObject.Find("puppy").GetComponent<dogScript>().pickedUpDog == false)
+            if (pressingE && GameObject.Find("puppy").GetComponent<dogScript>().pickedUpDog == false)
             {
-                pickedUpBox = true;
+                pickedUpCat = true;
                 this.transform.parent = player.transform;
-                this.transform.localPosition = new Vector2(0, -3);
+                this.transform.localPosition = new Vector2(3, -2);
             }
         }
     }
@@ -34,9 +33,17 @@ public class boxScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.R))
         {
-            this.transform.parent = null;
             pressingE = false;
-            pickedUpBox = false;
+            this.transform.parent = null;
+            pickedUpCat = false;
+        }
+        if (player.GetComponent<playerscript>().moveRight == true)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 }

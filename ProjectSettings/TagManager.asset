@@ -12,6 +12,10 @@ TagManager:
   - NPC1
   - door
   - redDoor
+  - theBox
+  - sadNPC1
+  - cat
+  - dog
   layers:
   - Default
   - TransparentFX

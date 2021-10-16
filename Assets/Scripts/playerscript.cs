@@ -35,6 +35,10 @@ public class playerscript : MonoBehaviour
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
 
         }
+        else
+        {
+            moveRight = false;
+        }
         if(Input.GetKey(KeyCode.A))
         {
             moveLeft = true;
