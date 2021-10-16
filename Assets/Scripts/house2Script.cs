@@ -16,7 +16,7 @@ public class house2Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (door.GetComponent<doorScript>().doorOpen)
+        if (door.GetComponent<door2Script>().doorOpen)
         {
             sprite.sortingOrder = 5;
         }

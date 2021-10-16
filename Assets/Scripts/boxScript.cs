@@ -7,6 +7,8 @@ public class boxScript : MonoBehaviour
     public bool pressingE;
     public GameObject player;
     static bool pickedUpBox;
+    public bool wrongBox;
+    public bool rightBox;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,18 @@ public class boxScript : MonoBehaviour
                 this.transform.parent = player.transform;
                 this.transform.localPosition = new Vector2(0, -3);
             }
+        }
+        if(collision.gameObject.tag == "Player" && gameObject.tag == "wrongBox")
+        {
+            GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().wrongPackage = true;
+            Debug.Log("holding wrong box");
+            wrongBox = true;
+        }
+        if (collision.gameObject.tag == "Player" && gameObject.tag == "theBox")
+        {
+            GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage = true;
+            Debug.Log("holding right box");
+            rightBox = true;
         }
     }
     // Update is called once per frame

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class roof2Script : MonoBehaviour
+public class house2ColliderScript : MonoBehaviour
 {
     public GameObject door;
-    public SpriteRenderer spriteRenderer;
-
+    public PolygonCollider2D Collider;
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer.enabled = true;
+        Collider.enabled = true;
+
     }
 
     // Update is called once per frame
@@ -18,7 +18,8 @@ public class roof2Script : MonoBehaviour
     {
         if (door.GetComponent<door2Script>().doorOpen)
         {
-            spriteRenderer.enabled = false;
+            Collider.enabled = false;
+
         }
     }
 }

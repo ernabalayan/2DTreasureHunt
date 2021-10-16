@@ -16,6 +16,8 @@ TagManager:
   - sadNPC1
   - cat
   - dog
+  - wrongBox
+  - blueDoor
   layers:
   - Default
   - TransparentFX
