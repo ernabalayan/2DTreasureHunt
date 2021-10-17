@@ -34,13 +34,15 @@ public class sadNPC1Script: MonoBehaviour
             _text.text = "this isn't my pet, I have a dog, find him please";
         }
         if (GameObject.Find("puppy").GetComponent<dogScript>().pickedUpDog == true)
-        {
+        { 
             gotDog = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
-            _text.text = "BENEDICT! thank you for your help here is your key";
+            _text.text = "BARTHOLEMEW! thank you for your help here is your key";
             GetComponent<SpriteRenderer>().sprite = happyNPC1;
+           
         }
+      
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

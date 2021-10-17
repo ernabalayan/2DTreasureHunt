@@ -14,6 +14,7 @@ public class sadNPC4Script : MonoBehaviour
     public GameObject box;
     public BoxCollider2D knobCollider;
     public SpriteRenderer knobRenderer;
+    public bool firsttextPlayed;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class sadNPC4Script : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        firsttextPlayed = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "I bought my wife a gift for our anniversary but I can't find it, if you can find it for me I'll give you the door knob";
@@ -35,7 +36,7 @@ public class sadNPC4Script : MonoBehaviour
             _text.GetComponent<Text>().enabled = true;
             _text.text = "This isn't the right box, mine is in a red package, find my package please";
         }
-        if (rightPackage)
+        if (firsttextPlayed == true && rightPackage)
         {
             knobCollider.enabled = true;
             knobRenderer.enabled = true;

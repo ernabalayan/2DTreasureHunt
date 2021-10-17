@@ -9,7 +9,7 @@ public class gameTextManagerScript : MonoBehaviour
     public Text rulesText;
     public bool pressingSpace;
 
-    public float timerLength = 4f;
+    public float timerLength = 3f;
     
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class gameTextManagerScript : MonoBehaviour
             rulesText.GetComponent<Text>().enabled = false;
             textbox.GetComponent<Image>().enabled = false;
             pressingSpace = false;
-            timerLength = 4f;
+            timerLength = 3f;
             
         }
     }

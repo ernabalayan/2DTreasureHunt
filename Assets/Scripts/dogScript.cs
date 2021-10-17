@@ -28,9 +28,11 @@ public class dogScript : MonoBehaviour
         if(collision.gameObject.tag == "sadNPC1")
         {
             this.transform.parent = sadNPC1.transform;
-            this.transform.localPosition = new Vector2(0, 2); 
+            this.transform.localPosition = new Vector2(0, 2);
+            pressingE = false;
         }
     }
+   
     // Update is called once per frame
     void Update()
     {

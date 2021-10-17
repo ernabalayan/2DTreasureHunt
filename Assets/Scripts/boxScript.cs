@@ -13,8 +13,9 @@ public class boxScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -27,23 +28,27 @@ public class boxScript : MonoBehaviour
             }
         }
        
-        if(pressingE == true && collision.gameObject.tag == "Player" && gameObject.tag == "wrongBox")
+        if(GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().firsttextPlayed == true && pressingE == true && collision.gameObject.tag == "Player" && gameObject.tag == "wrongBox")
         {
             GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().wrongPackage = true;
             Debug.Log("holding wrong box");
             wrongBox = true;
         }
+     
 
-            if (pressingE == true && collision.gameObject.tag == "Player" && gameObject.tag == "theBox")
-            {
-                GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage = true;
-                Debug.Log("holding right box");
-                rightBox = true;
-            }
+        if (pressingE == true && collision.gameObject.tag == "Player" && gameObject.tag == "theBox")
+        {
+            GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage = true;
+            Debug.Log("holding right box");
+            rightBox = true;
+        }
+     
         
-        
-
     }
+    
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -63,5 +68,8 @@ public class boxScript : MonoBehaviour
         }
 
         }
-    }
+   
+
+
+}
 
