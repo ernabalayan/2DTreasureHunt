@@ -19,6 +19,9 @@ TagManager:
   - wrongBox
   - blueDoor
   - coin
+  - greedyNPC1
+  - greedyNPC2
+  - greedyNPC3
   layers:
   - Default
   - TransparentFX

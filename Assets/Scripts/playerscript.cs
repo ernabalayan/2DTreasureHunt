@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class playerscript : MonoBehaviour
 {
-    public float moveSpeed = 3f;
+    public float moveSpeed = 50f;
     public GameObject player;
     public bool moveLeft;
     public bool moveRight;
@@ -44,16 +44,11 @@ public class playerscript : MonoBehaviour
             moveRight = true;
             GetComponent<Animator>().enabled = true;
             GetComponent<Animator>().Play("moveRightAnim");
-           
-    
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-
+            
         }
-        else
-        {
-            moveRight = false;
-        }
-        if(Input.GetKey(KeyCode.A))
+        
+       else if(Input.GetKey(KeyCode.A))
         {
             moveLeft = true;
             GetComponent<Animator>().enabled = true;
@@ -62,7 +57,7 @@ public class playerscript : MonoBehaviour
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
 
         }
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W))
         {
             moveUp = true;
             GetComponent<Animator>().enabled = true;
@@ -71,7 +66,7 @@ public class playerscript : MonoBehaviour
             transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
 
         }
-        if (Input.GetKey(KeyCode.S))
+       else if (Input.GetKey(KeyCode.S))
         {
             moveDown = true;
             GetComponent<Animator>().enabled = true;
@@ -80,7 +75,7 @@ public class playerscript : MonoBehaviour
             transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
 
         }
-        if (!Input.anyKey)
+       else if (!Input.anyKey)
         {
             GetComponent<Animator>().enabled = false;
        }
@@ -90,6 +85,14 @@ public class playerscript : MonoBehaviour
 
     void Update()
     {
+        if (!Input.GetKey(KeyCode.D))
+        {
+            moveRight = false;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 100f;
+        }
         
             MoveControls();
         
