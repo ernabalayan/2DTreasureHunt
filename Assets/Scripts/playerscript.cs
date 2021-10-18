@@ -11,18 +11,32 @@ public class playerscript : MonoBehaviour
     public bool moveRight;
     public bool moveUp;
     public bool moveDown;
+    public int score = 0;
+    public bool touchingCoin;
 
     public void Start()
     {
         
         
         GetComponent<Animator>().enabled = false;
-        
     }
 
     // Start is called before the first frame update
-   
- 
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+
+        if (collision.gameObject.tag == "coin")
+        {
+            touchingCoin = true;
+            score++;
+            Debug.Log(score);
+        }
+    }
+    
+  
     void MoveControls()
     {
         if(Input.GetKey(KeyCode.D))

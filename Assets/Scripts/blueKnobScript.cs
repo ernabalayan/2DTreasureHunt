@@ -9,6 +9,7 @@ public class blueKnobScript : MonoBehaviour
     public bool pressingE;
     public BoxCollider2D boxCollider;
     public SpriteRenderer spriteRenderer;
+    public bool scoreActivated;
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +30,22 @@ public class blueKnobScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "blueDoor")
         {
+            scoreActivated = true;
             blueDoor.GetComponent<BoxCollider2D>().enabled = false;
             blueDoor.GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(this.gameObject);
+            spriteRenderer.enabled = false;
+            boxCollider.enabled = false;
+
         }
 
     }
     // Update is called once per frame
     void Update()
     {
+        if (scoreActivated)
+        {
+            Debug.Log("scoreActivated");
+        }
         if (Input.GetKey(KeyCode.E))
         {
             pressingE = true;

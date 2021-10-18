@@ -39,11 +39,11 @@ public class catScript : MonoBehaviour
         }
         if (player.GetComponent<playerscript>().moveRight == true)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 }

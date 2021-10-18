@@ -11,6 +11,7 @@ public class redKnob : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         redDoor.GetComponent<BoxCollider2D>().enabled = true;
         redDoor.GetComponent<SpriteRenderer>().enabled = true;
     }

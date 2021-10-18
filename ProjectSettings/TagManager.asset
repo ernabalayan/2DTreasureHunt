@@ -18,6 +18,7 @@ TagManager:
   - dog
   - wrongBox
   - blueDoor
+  - coin
   layers:
   - Default
   - TransparentFX

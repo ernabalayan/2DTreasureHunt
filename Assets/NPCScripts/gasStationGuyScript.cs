@@ -21,7 +21,7 @@ public class gasStationGuyScript : MonoBehaviour
     {
         textbox.GetComponent<Image>().enabled = true;
         _text.enabled = true;
-        _text.text = "I'm not a very good mechanic so I couldn't fix the door knob down the road from here, do you think you can give it shot?";
+        _text.text = "Use this door knob to open the door down the road from here";
     }
 
     private void OnCollisionExit2D(Collision2D collision)
