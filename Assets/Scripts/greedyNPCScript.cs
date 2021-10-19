@@ -9,7 +9,7 @@ public class greedyNPCScript : MonoBehaviour
     public Image textbox;
     public bool got10dollars;
     public bool hasGivenMoney;
-    public int moneyGiven = 0;
+    public static int moneyGiven = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,22 +31,27 @@ public class greedyNPCScript : MonoBehaviour
         {
             
             
-                textbox.GetComponent<Image>().enabled = true;
-                _text.GetComponent<Text>().enabled = true;
-                got10dollars = true;
-                GameObject.Find("Player").GetComponent<playerscript>().score -= 10;
-                moneyGiven += 10;
-                _text.text = "Thanks, now give the rest of the players $10";
+               textbox.GetComponent<Image>().enabled = true;
+               _text.GetComponent<Text>().enabled = true;
+               got10dollars = true;
+               moneyGiven += 10;
+               GameObject.Find("Player").GetComponent<playerscript>().score -= 10;
+               _text.text = "Thanks, now give the rest of the players $10";
             
         }
-     
-        if(moneyGiven == 40)
+
+        if (moneyGiven == 30)
         {
+
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "here is your key";
+
         }
-     
+
+
+
+
     }
     void OnCollisionExit2D(Collision2D collision)
     {
@@ -57,6 +62,12 @@ public class greedyNPCScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
+
+
+
+        Debug.Log(moneyGiven);
+
     }
+    
 }

@@ -85,6 +85,7 @@ public class playerscript : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(score);
         if (!Input.GetKey(KeyCode.D))
         {
             moveRight = false;
@@ -93,7 +94,7 @@ public class playerscript : MonoBehaviour
         {
             moveSpeed = 100f;
         }
-        
+       
             MoveControls();
         
    

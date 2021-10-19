@@ -2948,7 +2948,7 @@ MonoBehaviour:
   buttonPressed: {fileID: 21300000, guid: 5dcc6bf0e9fdd5549a9b8a24e1b91bd7, type: 3}
   buttonNotPressed: {fileID: 21300000, guid: 72c089bd1cc073844b1355b1adfb113f, type: 3}
   buttonIsPressed: 0
-  timer: 60
+  timer: 30
   _timer: {fileID: 671416452}
   firstTimePressed: 0
 --- !u!1 &323509457
@@ -5381,7 +5381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 289.53455, y: 407, z: -10}
+  m_LocalPosition: {x: 277.53455, y: 439, z: -10}
   m_LocalScale: {x: 8.876628, y: 2.2394292, z: 0.87784714}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8742,7 +8742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825140677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 292, y: 407, z: 0}
+  m_LocalPosition: {x: 280, y: 439, z: 0}
   m_LocalScale: {x: 5.5524716, y: 5.744848, z: 5.684887}
   m_Children:
   - {fileID: 1446044119}
@@ -12626,7 +12626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100256851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 289.53455, y: 407, z: -10}
+  m_LocalPosition: {x: 277.53455, y: 439, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 117739637}
@@ -13168,7 +13168,6 @@ MonoBehaviour:
   textbox: {fileID: 1463472545}
   got10dollars: 0
   hasGivenMoney: 0
-  moneyGiven: 0
 --- !u!61 &1163203852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19098,7 +19097,6 @@ MonoBehaviour:
   textbox: {fileID: 1631124279}
   got10dollars: 0
   hasGivenMoney: 0
-  moneyGiven: 0
 --- !u!61 &1638101438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22880,7 +22878,6 @@ MonoBehaviour:
   textbox: {fileID: 1350996781}
   got10dollars: 0
   hasGivenMoney: 0
-  moneyGiven: 0
 --- !u!61 &2041838643
 BoxCollider2D:
   m_ObjectHideFlags: 0
