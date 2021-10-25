@@ -32,8 +32,10 @@ public class blueKnobScript : MonoBehaviour
         if (collision.gameObject.tag == "blueDoor")
         {
             scoreActivated = true;
-            blueDoor.GetComponent<BoxCollider2D>().enabled = false;
-            blueDoor.GetComponent<SpriteRenderer>().enabled = false;
+            blueDoor.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            blueDoor.GetComponent<HingeJoint2D>().enabled = true;
+           // blueDoor.GetComponent<BoxCollider2D>().enabled = false;
+           // blueDoor.GetComponent<SpriteRenderer>().enabled = false;
             spriteRenderer.enabled = false;
             boxCollider.enabled = false;
 

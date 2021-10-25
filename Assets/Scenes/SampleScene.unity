@@ -8278,13 +8278,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 733902564}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 243.13, y: 850}
+  m_Anchor: {x: -1.1540428, y: 0.11496711}
+  m_ConnectedAnchor: {x: 208.72763, y: 852.24457}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
