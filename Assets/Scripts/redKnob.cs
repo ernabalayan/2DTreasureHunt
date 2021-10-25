@@ -26,8 +26,11 @@ public class redKnob : MonoBehaviour
 
             if (collision.gameObject.tag == "redDoor")
             {
-                redDoor.GetComponent<BoxCollider2D>().enabled = false;
-                redDoor.GetComponent<SpriteRenderer>().enabled = false;
+                Debug.Log("red Door open");
+                redDoor.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                redDoor.GetComponent<HingeJoint2D>().enabled = true;
+                //redDoor.GetComponent<BoxCollider2D>().enabled = false;
+               // redDoor.GetComponent<SpriteRenderer>().enabled = false;
                 Destroy(this.gameObject);
             }
         }

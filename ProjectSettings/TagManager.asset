@@ -22,6 +22,7 @@ TagManager:
   - greedyNPC1
   - greedyNPC2
   - greedyNPC3
+  - greenDoor
   layers:
   - Default
   - TransparentFX

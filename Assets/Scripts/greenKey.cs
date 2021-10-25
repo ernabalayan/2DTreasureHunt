@@ -37,6 +37,8 @@ public class greenKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(GameObject.Find("greedyNPC4").GetComponent<bossScript>().greenKeyActivated);
+
         if (GameObject.Find("greedyNPC4").GetComponent<bossScript>().greenKeyActivated)
         {
             GetComponent<BoxCollider2D>().enabled = true;

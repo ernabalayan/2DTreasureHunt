@@ -28,7 +28,7 @@ public class sadNPC4Script : MonoBehaviour
         firsttextPlayed = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
-            _text.text = "I bought my wife a gift for our anniversary but I can't find it, if you can find it for me I'll give you the door knob";
+            _text.text = "I bought my wife a gift for our anniversary but I can't find it, if you can find it for me I'll give you the blue key";
         
         if (wrongPackage)
         {

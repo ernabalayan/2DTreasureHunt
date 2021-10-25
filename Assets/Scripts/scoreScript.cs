@@ -16,7 +16,7 @@ public class scoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.Find("blueKnob").GetComponent<blueKnobScript>().scoreActivated == true)
+        if(GameObject.Find("blueKey").GetComponent<blueKnobScript>().scoreActivated == true)
         {
             _text.enabled = true;
             _text.text = "$" + GameObject.Find("Player").GetComponent<playerscript>().score;

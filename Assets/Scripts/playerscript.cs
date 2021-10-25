@@ -96,7 +96,7 @@ public class playerscript : MonoBehaviour
         }
        
             MoveControls();
-        
-   
+
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 }
