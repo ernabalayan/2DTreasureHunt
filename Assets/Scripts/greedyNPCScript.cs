@@ -10,6 +10,7 @@ public class greedyNPCScript : MonoBehaviour
     public bool got10dollars;
     public bool hasGivenMoney;
     public static int moneyGiven = 0;
+    public bool giveKey;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,7 @@ public class greedyNPCScript : MonoBehaviour
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "here is your key";
+            giveKey = true;
 
         }
 

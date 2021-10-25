@@ -3,34 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class gasStationGuyScript : MonoBehaviour
+public class redDoor : MonoBehaviour
 {
     public Text _text;
     public Image textbox;
-    public SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
-        textbox.GetComponent<Image>().enabled = false;
-        _text = GameObject.Find("Textbox").GetComponent<Text>();
         _text.GetComponent<Text>().enabled = false;
-
+        textbox.GetComponent<Image>().enabled = false;
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        textbox.GetComponent<Image>().enabled = true;
-        _text.enabled = true;
-        _text.text = "Use this red key to open the door down the road from here";
+        if(GameObject.Find("redKnob").GetComponent<redKnob>().hasKnob == false)
+        {
+            _text.text = "Find red key to enter";
+            _text.GetComponent<Text>().enabled = true;
+            textbox.GetComponent<Image>().enabled = true;
+            
+        }
     }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
+        _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
-        _text.enabled = false;
     }
+    // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

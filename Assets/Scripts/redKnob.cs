@@ -7,6 +7,7 @@ public class redKnob : MonoBehaviour
     public GameObject player;
     public GameObject redDoor;
     public bool pressingE;
+    public bool hasKnob;
  
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class redKnob : MonoBehaviour
         {
             this.transform.parent = player.transform;
             this.transform.localPosition = new Vector2(-2, -2);
+            hasKnob = true;
 
             if (collision.gameObject.tag == "redDoor")
             {

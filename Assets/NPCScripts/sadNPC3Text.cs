@@ -25,7 +25,7 @@ public class sadNPC3Text : MonoBehaviour
         {
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
-            _text.text = "Can you help her find her pet please?";
+            _text.text = "I think I saw it run to the left";
 
         }
         if (GameObject.Find("sadNPC1").GetComponent<sadNPC1Script>().gotDog == true)

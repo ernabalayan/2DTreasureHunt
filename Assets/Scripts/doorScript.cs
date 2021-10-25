@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class doorScript : MonoBehaviour
 {
@@ -11,12 +12,16 @@ public class doorScript : MonoBehaviour
     public SpriteRenderer keySpriteRenderer;
     public PolygonCollider2D keySpriteCollider;
     public bool doorOpen;
+    public Text _text;
+    public Image textbox;
   
 
   
     // Start is called before the first frame update
     void Start()
     {
+        _text.GetComponent<Text>().enabled = false;
+        textbox.GetComponent<Image>().enabled = false;
         doorOpen = false;
         boxCollider.enabled = true;
         spriteRenderer.enabled = true;
@@ -25,7 +30,14 @@ public class doorScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (key.GetComponent<keyScript>().hasKey)
+        if (key.GetComponent<keyScript>().hasKey == false)
+        {
+            _text.GetComponent<Text>().enabled = true;
+            _text.text = "Find gold key to unlock";
+            textbox.GetComponent<Image>().enabled = true;
+        }
+
+            if (key.GetComponent<keyScript>().hasKey)
         {
             doorOpen = true;
             boxCollider.enabled = false;
@@ -37,6 +49,11 @@ public class doorScript : MonoBehaviour
 
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _text.GetComponent<Text>().enabled = false;
+        textbox.GetComponent<Image>().enabled = false;
+    }
     // Update is called once per frame
-  
+
 }
