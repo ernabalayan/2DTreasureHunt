@@ -10,6 +10,7 @@ public class blueKnobScript : MonoBehaviour
     public BoxCollider2D boxCollider;
     public SpriteRenderer spriteRenderer;
     public bool scoreActivated;
+    public bool hasKey;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class blueKnobScript : MonoBehaviour
         {
             this.transform.parent = player.transform;
             this.transform.localPosition = new Vector2(-2, -2);
-
+            hasKey = true;
             
         }
         if (collision.gameObject.tag == "blueDoor")

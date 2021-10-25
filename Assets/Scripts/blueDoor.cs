@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class greenDoor : MonoBehaviour
+public class blueDoor : MonoBehaviour
 {
     public Text _text;
     public Image textbox;
@@ -11,14 +11,16 @@ public class greenDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        GetComponent<HingeJoint2D>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GameObject.Find("greenKey").GetComponent<greenKey>().hasKey == false)
+        if (GameObject.Find("blueKey").GetComponent<blueKnobScript>().hasKey == false)
         {
-            _text.text = "Find green key to enter";
+            _text.text = "Find blue key to enter";
             _text.GetComponent<Text>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
 
@@ -29,5 +31,4 @@ public class greenDoor : MonoBehaviour
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }
-    // Update is called once per frame
 }
