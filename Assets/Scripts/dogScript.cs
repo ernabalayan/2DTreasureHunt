@@ -29,7 +29,9 @@ public class dogScript : MonoBehaviour
         {
             this.transform.parent = sadNPC1.transform;
             this.transform.localPosition = new Vector2(0, 2);
+            GetComponent<boxScript>().pressingE = false;
             pressingE = false;
+
         }
     }
    

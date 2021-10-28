@@ -32,16 +32,23 @@ public class buttonScript : MonoBehaviour
     {
         if (buttonIsPressed)
         {
-            
+            print("1");
+           // speedScript.instance.sliderParent.gameObject.SetActive(true);
+            speedScript.instance.sliderValue = timer / 30;
             timer -= Time.deltaTime;
             _timer.text = "Time Left: " + timer.ToString("0");
         }
         if(timer <= 0.0f)
         {
+            GameObject.Find("Player").GetComponent<playerscript>().moveSpeed = 50f;
+            print("2");
+            speedScript.instance.sliderParent.gameObject.SetActive(false);
             firstTimePressed = true;
             buttonIsPressed = false;
             timer = 30.0f;
-            GetComponent<SpriteRenderer>().sprite = buttonNotPressed; 
+            GetComponent<SpriteRenderer>().sprite = buttonNotPressed;
+            GameObject.Find("speed").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("speed").GetComponent<BoxCollider2D>().enabled = true;
         }
        
     }

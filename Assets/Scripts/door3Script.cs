@@ -9,8 +9,6 @@ public class door3Script : MonoBehaviour
     public Collider2D keyCollider;
     public SpriteRenderer spriteRenderer;
     public BoxCollider2D boxCollider;
-    public SpriteRenderer keySpriteRenderer;
-    public PolygonCollider2D keySpriteCollider;
     public bool doorOpen;
     public Text _text;
     public Image textbox;

@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class boxScript : MonoBehaviour
 {
     public bool pressingE;
+    public SpriteRenderer E;
+    public bool pressingR;
+    public Sprite greenSprite;
     public GameObject player;
     static bool pickedUpBox;
     public bool wrongBox;
@@ -55,9 +59,11 @@ public class boxScript : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             pressingE = true;
+            
         }
         if (Input.GetKey(KeyCode.R))
         {
+            pressingR = true;
             GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage = false;
             GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().wrongPackage = false;
             wrongBox = false;
@@ -66,6 +72,10 @@ public class boxScript : MonoBehaviour
             pressingE = false;
             pickedUpBox = false;
         }
+       // if (pressingE)
+       // {
+        //    E.sprite = greenSprite;
+      //  }
 
         }
    

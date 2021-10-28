@@ -18,7 +18,7 @@ public class keyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("burger").GetComponent<burgerScript>().canGiveBurger == true)
+        if (GameObject.Find("burger").GetComponent<burgerScript>().canGiveBurger == true || GameObject.Find("apple").GetComponent<appleScript>().canGiveApple == true)
         {
             hasKey = true;
             this.transform.parent = player.transform;

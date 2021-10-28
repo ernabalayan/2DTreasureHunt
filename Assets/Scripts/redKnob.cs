@@ -22,6 +22,7 @@ public class redKnob : MonoBehaviour
         {
             this.transform.parent = player.transform;
             this.transform.localPosition = new Vector2(-2, -2);
+            GetComponent<SpriteRenderer>().sortingOrder = 4;
             hasKnob = true;
 
             if (collision.gameObject.tag == "redDoor")

@@ -90,10 +90,6 @@ public class playerscript : MonoBehaviour
         {
             moveRight = false;
         }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            moveSpeed = 100f;
-        }
        
             MoveControls();
 

@@ -27,6 +27,7 @@ public class burgerScript : MonoBehaviour
         }
         if(collision.gameObject.tag == "NPC1")
         {
+            if(GameObject.Find("angryKid").GetComponent<angryKidScript>().rightItem == true && GameObject.Find("angryKid").GetComponent<angryKidScript>().gotBurger == true)
             canGiveBurger = true;
           
         }

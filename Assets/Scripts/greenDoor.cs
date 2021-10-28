@@ -16,12 +16,15 @@ public class greenDoor : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GameObject.Find("greenKey").GetComponent<greenKey>().hasKey == false)
+        if (collision.gameObject.tag == "Player")
         {
-            _text.text = "Find green key to enter";
-            _text.GetComponent<Text>().enabled = true;
-            textbox.GetComponent<Image>().enabled = true;
+            if (GameObject.Find("greenKey").GetComponent<greenKey>().hasKey == false)
+            {
+                _text.text = "Find green key to enter";
+                _text.GetComponent<Text>().enabled = true;
+                textbox.GetComponent<Image>().enabled = true;
 
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

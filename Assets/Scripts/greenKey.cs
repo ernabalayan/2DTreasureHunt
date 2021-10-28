@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class greenKey : MonoBehaviour
 {
     public GameObject player;
     public GameObject greenDoor;
+    public GameObject greenDoor1;
+    public GameObject Lock;
     public bool pressingE;
     public bool hasKey;
    
@@ -14,8 +16,7 @@ public class greenKey : MonoBehaviour
     {
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
-        greenDoor.GetComponent<BoxCollider2D>().enabled = true;
-        greenDoor.GetComponent<SpriteRenderer>().enabled = true;
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -28,8 +29,12 @@ public class greenKey : MonoBehaviour
 
             if (collision.gameObject.tag == "greenDoor")
             {
+
                 greenDoor.GetComponent<BoxCollider2D>().enabled = false;
-                greenDoor.GetComponent<SpriteRenderer>().enabled = false;
+                greenDoor1.GetComponent<SpriteRenderer>().enabled = false;
+                Lock.GetComponent<SpriteRenderer>().enabled = false;
+
+                SceneManager.LoadScene(1);
                 Destroy(this.gameObject);
             }
         }
