@@ -10,6 +10,7 @@ public class coinScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         boxCollider.enabled = false;
         spriteRenderer.enabled = false;
     }
@@ -37,6 +38,7 @@ public class coinScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            GetComponent<AudioSource>().enabled = true;
             collidedWithPlayer = true;
         }
         

@@ -10,6 +10,7 @@ public class key2Script : MonoBehaviour
 
     private void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         hasKey = false;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<PolygonCollider2D>().enabled = false;
@@ -20,6 +21,7 @@ public class key2Script : MonoBehaviour
     {
         if (GameObject.Find("sadNPC1").GetComponent<sadNPC1Script>().gotDog == true)
         {
+            GetComponent<AudioSource>().enabled = true;
             hasKey = true;
             this.transform.parent = player.transform;
             this.transform.localPosition = new Vector2(2, -2);

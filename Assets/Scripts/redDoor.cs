@@ -11,6 +11,7 @@ public class redDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<HingeJoint2D>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
@@ -20,6 +21,7 @@ public class redDoor : MonoBehaviour
     {
         if(GameObject.Find("redKey").GetComponent<redKnob>().hasKnob == false)
         {
+            GetComponent<AudioSource>().enabled = true;
             _text.text = "Find red key to enter";
             _text.GetComponent<Text>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;

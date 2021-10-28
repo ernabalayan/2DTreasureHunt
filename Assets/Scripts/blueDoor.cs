@@ -11,6 +11,7 @@ public class blueDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<HingeJoint2D>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
@@ -20,6 +21,7 @@ public class blueDoor : MonoBehaviour
     {
         if (GameObject.Find("blueKey").GetComponent<blueKnobScript>().hasKey == false)
         {
+            GetComponent<AudioSource>().enabled = true;
             _text.text = "Find blue key to enter";
             _text.GetComponent<Text>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
@@ -28,6 +30,7 @@ public class blueDoor : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }

@@ -11,6 +11,7 @@ public class greenDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }
@@ -20,6 +21,7 @@ public class greenDoor : MonoBehaviour
         {
             if (GameObject.Find("greenKey").GetComponent<greenKey>().hasKey == false)
             {
+                GetComponent<AudioSource>().enabled = true;
                 _text.text = "Find green key to enter";
                 _text.GetComponent<Text>().enabled = true;
                 textbox.GetComponent<Image>().enabled = true;
@@ -29,6 +31,7 @@ public class greenDoor : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }

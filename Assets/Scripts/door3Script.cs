@@ -18,6 +18,7 @@ public class door3Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         doorOpen = false;
@@ -30,6 +31,7 @@ public class door3Script : MonoBehaviour
     {
         if (key.GetComponent<key3>().hasKey == false)
         {
+            GetComponent<AudioSource>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "Find gold key to unlock";
             textbox.GetComponent<Image>().enabled = true;
@@ -49,6 +51,7 @@ public class door3Script : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }

@@ -8,8 +8,10 @@ public class keyScript : MonoBehaviour
     public GameObject player;
     public bool hasKey;
 
+
     private void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         hasKey = false;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<PolygonCollider2D>().enabled = false;
@@ -20,6 +22,7 @@ public class keyScript : MonoBehaviour
     {
         if (GameObject.Find("burger").GetComponent<burgerScript>().canGiveBurger == true || GameObject.Find("apple").GetComponent<appleScript>().canGiveApple == true)
         {
+            GetComponent<AudioSource>().enabled = true;
             hasKey = true;
             this.transform.parent = player.transform;
             this.transform.localPosition = new Vector2(2, -2);
