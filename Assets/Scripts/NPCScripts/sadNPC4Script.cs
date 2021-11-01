@@ -18,6 +18,7 @@ public class sadNPC4Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
     }
@@ -25,19 +26,23 @@ public class sadNPC4Script : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         firsttextPlayed = true;
-            textbox.GetComponent<Image>().enabled = true;
+        GetComponent<AudioSource>().enabled = true;
+        textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "I bought my wife a gift for our anniversary but I can't find it, if you can find it for me I'll give you the blue key";
         
         if (wrongPackage)
         {
+            GetComponent<AudioSource>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "This isn't the right box, mine is in a red package, find my package please";
         }
         if (firsttextPlayed == true && rightPackage)
         {
+            GetComponent<AudioSource>().enabled = true;
             knobCollider.enabled = true;
             knobRenderer.enabled = true;
             box.transform.parent = this.transform;
@@ -51,6 +56,7 @@ public class sadNPC4Script : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
 

@@ -27,11 +27,13 @@ public class dogScript : MonoBehaviour
         }
         if(collision.gameObject.tag == "sadNPC1")
         {
-            this.transform.parent = sadNPC1.transform;
-            this.transform.localPosition = new Vector2(0, 2);
-            GetComponent<boxScript>().pressingE = false;
+            rScript r = FindObjectOfType<rScript>();
+            r.E.GetComponent<SpriteRenderer>().sprite = r.EnotPressed;
+            transform.parent = sadNPC1.transform;
+            transform.localPosition = new Vector2(0, 2);
+            boxScript.pressingE = false;
             pressingE = false;
-
+            pickedUpDog = false;
         }
     }
    

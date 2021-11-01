@@ -28,6 +28,7 @@ public class angryKidScript : MonoBehaviour
         {
             rightItem = true;
         }
+        GetComponent<AudioSource>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         Debug.Log(rightItem);
@@ -40,6 +41,7 @@ public class angryKidScript : MonoBehaviour
 
         if(!gotApple && !gotBurger)
         {
+            GetComponent<AudioSource>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "I'm so hungry, find me some food and I will give you the key";
@@ -47,14 +49,16 @@ public class angryKidScript : MonoBehaviour
         if (rightItem == true)
                 if (gotBurger)
                 {
-                    textbox.GetComponent<Image>().enabled = true;
+                GetComponent<AudioSource>().enabled = true;
+                textbox.GetComponent<Image>().enabled = true;
                     _text.GetComponent<Text>().enabled = true;
                     _text.text = "I hate tomatoes but I guess this will do, here's the key";
                     spriteRenderer.sprite = happyKid;
                 }
                 else if (gotApple)
                 {
-                    textbox.GetComponent<Image>().enabled = true;
+                GetComponent<AudioSource>().enabled = true;
+                textbox.GetComponent<Image>().enabled = true;
                     _text.GetComponent<Text>().enabled = true;
                     _text.text = "ew I hate fruit, get me something else or no key for you";
                 }
@@ -63,7 +67,8 @@ public class angryKidScript : MonoBehaviour
             {
                 if (gotApple)
                 {
-                    textbox.GetComponent<Image>().enabled = true;
+                GetComponent<AudioSource>().enabled = true;
+                textbox.GetComponent<Image>().enabled = true;
                     _text.GetComponent<Text>().enabled = true;
                     _text.text = "I love apples, thank you here is your key";
                     spriteRenderer.sprite = happyKid;
@@ -71,7 +76,8 @@ public class angryKidScript : MonoBehaviour
                 }
                 else if (gotBurger)
                 {
-                    textbox.GetComponent<Image>().enabled = true;
+                GetComponent<AudioSource>().enabled = true;
+                textbox.GetComponent<Image>().enabled = true;
                     _text.GetComponent<Text>().enabled = true;
                     _text.text = "I'm actually vegan so I can't eat this, get me something else";
                 }
@@ -88,6 +94,7 @@ public class angryKidScript : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
        

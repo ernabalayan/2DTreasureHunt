@@ -15,6 +15,7 @@ public class blueKnobScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         spriteRenderer.enabled = false;
         boxCollider.enabled = false;
         blueDoor.GetComponent<BoxCollider2D>().enabled = true;
@@ -24,6 +25,7 @@ public class blueKnobScript : MonoBehaviour
     {
         if (spriteRenderer.enabled == true && boxCollider.enabled == true)
         {
+            GetComponent<AudioSource>().enabled = true;
             this.transform.parent = player.transform;
             this.transform.localPosition = new Vector2(-2, -2);
             hasKey = true;

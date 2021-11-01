@@ -85,7 +85,6 @@ public class playerscript : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(score);
         if (!Input.GetKey(KeyCode.D))
         {
             moveRight = false;

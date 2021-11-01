@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class boxScript : MonoBehaviour
 {
-    public bool pressingE;
+    public static bool pressingE;
     public SpriteRenderer E;
     public bool pressingR;
     public Sprite greenSprite;
@@ -24,7 +24,7 @@ public class boxScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (pressingE && pickedUpBox == false && GameObject.Find("cat").GetComponent<catScript>().pickedUpCat == false && GameObject.Find("puppy").GetComponent<dogScript>().pickedUpDog == false)
+            if (pressingE && !GameObject.Find("sadNPC4").GetComponent<sadNPC4Script>().rightPackage && pickedUpBox == false && GameObject.Find("cat").GetComponent<catScript>().pickedUpCat == false && GameObject.Find("puppy").GetComponent<dogScript>().pickedUpDog == false)
             {
                 pickedUpBox = true;
                 this.transform.parent = player.transform;
@@ -49,9 +49,6 @@ public class boxScript : MonoBehaviour
      
         
     }
-    
-
-
 
     // Update is called once per frame
     void Update()

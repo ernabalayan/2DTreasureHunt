@@ -9,9 +9,14 @@ public class bossScript : MonoBehaviour
     public Image textbox;
     public bool got50dollars;
     public bool greenKeyActivated;
+    public AudioSource textboxSound;
+    public AudioSource cashSound;
     // Start is called before the first frame update
     void Start()
     {
+        textboxSound.enabled = false;
+        cashSound.enabled = false;
+        GetComponent<AudioSource>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }
@@ -19,12 +24,16 @@ public class bossScript : MonoBehaviour
     {
         if(GameObject.Find("Player").GetComponent<playerscript>().score < 70)
         {
+            textboxSound.enabled = true;
             _text.GetComponent<Text>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.text = "I'll tell you what, if you bring me $70 I'll give you the key";
         }
         if (GameObject.Find("Player").GetComponent<playerscript>().score >= 70)
         {
+            textboxSound.enabled = true;
+            cashSound.enabled = true;
+            GetComponent<AudioSource>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
             GameObject.Find("Player").GetComponent<playerscript>().score -= 70;
@@ -33,6 +42,7 @@ public class bossScript : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        textboxSound.enabled = false;
         _text.GetComponent<Text>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
     }
@@ -41,7 +51,7 @@ public class bossScript : MonoBehaviour
     {
         if (greenKeyActivated)
         {
-            _text.text = "Congradulations, here is the green key!";
+            _text.text = "Congratulations, here is the green key!";
         }
     }
 }

@@ -29,6 +29,7 @@ public class coinScript : MonoBehaviour
         }
        if( GameObject.Find("buttonPressed").GetComponent<buttonScript>().buttonIsPressed == false)
         {
+            GetComponent<AudioSource>().enabled = false;
             collidedWithPlayer = false;
         }
 
@@ -41,9 +42,9 @@ public class coinScript : MonoBehaviour
             GetComponent<AudioSource>().enabled = true;
             collidedWithPlayer = true;
         }
-        
-         
-        
+
+
+
     }
     // Update is called once per frame
 

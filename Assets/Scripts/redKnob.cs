@@ -12,7 +12,7 @@ public class redKnob : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GetComponent<AudioSource>().enabled = false;
         redDoor.GetComponent<BoxCollider2D>().enabled = true;
         redDoor.GetComponent<SpriteRenderer>().enabled = true;
     }
@@ -20,6 +20,7 @@ public class redKnob : MonoBehaviour
     {
         if (pressingE)
         {
+            GetComponent<AudioSource>().enabled = true;
             this.transform.parent = player.transform;
             this.transform.localPosition = new Vector2(-2, -2);
             GetComponent<SpriteRenderer>().sortingOrder = 4;

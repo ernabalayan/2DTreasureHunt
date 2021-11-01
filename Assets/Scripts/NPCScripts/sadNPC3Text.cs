@@ -12,6 +12,7 @@ public class sadNPC3Text : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
 
@@ -23,6 +24,7 @@ public class sadNPC3Text : MonoBehaviour
     {
         if (GameObject.Find("sadNPC1").GetComponent<sadNPC1Script>().gotDog == false)
         {
+            GetComponent<AudioSource>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             _text.text = "I think I saw it run to the left";
@@ -30,7 +32,7 @@ public class sadNPC3Text : MonoBehaviour
         }
         if (GameObject.Find("sadNPC1").GetComponent<sadNPC1Script>().gotDog == true)
         {
-
+            GetComponent<AudioSource>().enabled = true;
             _text.GetComponent<Text>().enabled = true;
             textbox.GetComponent<Image>().enabled = true;
             _text.text = "Thank you so much for helping my friend";
@@ -39,6 +41,7 @@ public class sadNPC3Text : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
     }

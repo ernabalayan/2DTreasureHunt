@@ -11,6 +11,7 @@ public class gasStationGuyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text = GameObject.Find("Textbox").GetComponent<Text>();
         _text.GetComponent<Text>().enabled = false;
@@ -19,6 +20,7 @@ public class gasStationGuyScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = true;
         textbox.GetComponent<Image>().enabled = true;
         _text.enabled = true;
         _text.text = "Use this red key to open the door down the road from here";
@@ -26,6 +28,7 @@ public class gasStationGuyScript : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        GetComponent<AudioSource>().enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.enabled = false;
     }

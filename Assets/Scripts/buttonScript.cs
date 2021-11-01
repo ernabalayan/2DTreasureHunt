@@ -39,6 +39,7 @@ public class buttonScript : MonoBehaviour
     {
         if (buttonIsPressed)
         {
+            alarmSound.enabled = false;
             timerSound.enabled = true;
             print("1");
            // speedScript.instance.sliderParent.gameObject.SetActive(true);
@@ -48,15 +49,16 @@ public class buttonScript : MonoBehaviour
         }
         if(timer <= 0.0f)
         {
+            buttonIsPressed = false;
+            GetComponent<SpriteRenderer>().sprite = buttonNotPressed;
+            timer = 30.0f;
             timerSound.enabled = false;
             alarmSound.enabled = true;
-            GameObject.Find("Player").GetComponent<playerscript>().moveSpeed = 50f;
-            print("2");
-            speedScript.instance.sliderParent.gameObject.SetActive(false);
+            buttonPressedSound.enabled = false;
             firstTimePressed = true;
-            buttonIsPressed = false;
-            timer = 30.0f;
-            GetComponent<SpriteRenderer>().sprite = buttonNotPressed;
+            GetComponent<coinScript>().GetComponent<AudioSource>().enabled = false;    
+            GameObject.Find("Player").GetComponent<playerscript>().moveSpeed = 50f;
+            speedScript.instance.sliderParent.gameObject.SetActive(false);
             GameObject.Find("speed").GetComponent<SpriteRenderer>().enabled = true;
             GameObject.Find("speed").GetComponent<BoxCollider2D>().enabled = true;
         }

@@ -11,9 +11,13 @@ public class greedyNPCScript : MonoBehaviour
     public bool hasGivenMoney;
     public static int moneyGiven = 0;
     public bool giveKey;
+    public AudioSource textboxSound;
+    public AudioSource cashSound;
     // Start is called before the first frame update
     void Start()
     {
+        textboxSound.enabled = false;
+        cashSound.enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
     }
@@ -23,6 +27,7 @@ public class greedyNPCScript : MonoBehaviour
         {
             if(collision.gameObject.tag == "Player")
             {
+                textboxSound.enabled = true;
                 textbox.GetComponent<Image>().enabled = true;
                 _text.GetComponent<Text>().enabled = true;
                 _text.text = "Here's the deal, if you give all of us $10 we'll give you the key to the house";
@@ -30,8 +35,9 @@ public class greedyNPCScript : MonoBehaviour
         }
         if (GameObject.Find("Player").GetComponent<playerscript>().score >= 10 && got10dollars == false)
         {
-            
-            
+            textboxSound.enabled = true;
+            cashSound.enabled = true;
+            GetComponent<AudioSource>().enabled = true;
                textbox.GetComponent<Image>().enabled = true;
                _text.GetComponent<Text>().enabled = true;
                got10dollars = true;
@@ -57,6 +63,7 @@ public class greedyNPCScript : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D collision)
     {
+        textboxSound.enabled = false;
         textbox.GetComponent<Image>().enabled = false;
         _text.GetComponent<Text>().enabled = false;
 
@@ -68,7 +75,7 @@ public class greedyNPCScript : MonoBehaviour
 
 
 
-        Debug.Log(moneyGiven);
+       
 
     }
     
